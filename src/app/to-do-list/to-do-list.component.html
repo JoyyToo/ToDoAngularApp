@@ -1,0 +1,20 @@
+<h3>Add a ToDO Topic</h3>
+
+<form class="ui large form segment">
+  <div class="field">
+    <label for="title">Title:</label>
+    <input name="title" #mytitle>
+  </div>
+</form>
+<br>
+<button (click)="addTopic(mytitle)">ADD</button>
+
+<div>
+  <h4>Available topics</h4>
+  <ul type="square">
+    <li *ngFor="let title of titles">{{title}}</li>
+  </ul>
+</div>
+
+
+
