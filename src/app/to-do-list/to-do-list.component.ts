@@ -15,11 +15,17 @@ export class ToDoListComponent {
   addTopic(titles: HTMLInputElement): boolean{
     if(titles.value) {
       this.titles.push(titles.value)
+      titles.value=''
       return false;
     }
     else {
       alert('Please add a topic')
     }
+  }
+
+  onEnter(event: any): void {
+    this.addTopic(event.target);
+    event.preventDefault();
   }
 
 

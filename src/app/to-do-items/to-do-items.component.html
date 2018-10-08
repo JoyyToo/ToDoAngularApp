@@ -1,0 +1,55 @@
+<h3>Add a ToDO List Item</h3>
+
+<form class="ui large form segment">
+  <div class="field">
+    <label for="title">Title:</label>
+    <input name="title" #mytitle >
+  </div>
+  <div class="field">
+      <label for="description">Description:</label>
+      <input name="description" #mydescription >
+    </div>
+<br>
+<button (click)="addItem(mytitle, mydescription)">ADD</button>
+</form>
+
+<div>
+  <h4 *ngIf="items.length">Available ToDo List Items</h4>
+    <table>
+      <tr *ngIf="items.length"> 
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+        <td><button (click)="completeStatus(item.title)">
+          Mark as complete
+        </button></td>
+      </tr>
+    </table>
+  </div>
+    <br>
+
+    <table>
+      <tr>
+        <th *ngIf="items.length">Pending Tasks</th>
+      </tr>
+
+      <tr *ngFor="let item of items">
+          <td>{{item.title}}</td>
+      </tr>
+    </table>
+    <br>
+
+    <table>
+        <tr>
+          <th *ngIf="completeTasks.length">Completed Tasks</th>
+        </tr>
+
+        <tr *ngFor="let complete of completeTasks">
+            <td>{{complete}}</td>
+        </tr>
+    </table>
+
