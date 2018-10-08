@@ -3,7 +3,7 @@
 <form class="ui large form segment">
   <div class="field">
     <label for="title">Title:</label>
-    <input name="title" #mytitle>
+    <input name="title" (keydown.enter)="onEnter($event)" #mytitle>
   </div>
 </form>
 <br>
